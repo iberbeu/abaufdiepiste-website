@@ -76,9 +76,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 10px;
   border: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
+}
+.box-logo-img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  border-radius: 12px;
 }
 .box-mockup::before {
   content: '';
@@ -115,6 +121,15 @@
   text-transform: uppercase;
   padding: 6px 12px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.badge-logo-img {
+  height: 16px;
+  width: 16px;
+  object-fit: contain;
+  border-radius: 3px;
 }
 .box-lines {
   position: absolute;
@@ -139,6 +154,7 @@
   .hero-actions { justify-content: center; }
   .hero-visual { order: -1; }
   .box-mockup { width: 240px; height: 300px; }
+  .box-logo-img { height: 72px; width: 72px; }
 }
 
 /* ══════════════════════════════════════════════════ */

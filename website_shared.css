@@ -128,8 +128,17 @@ nav {
   color: var(--summit-white);
   letter-spacing: -0.01em;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .nav-logo span { color: var(--alpenglühen); }
+.nav-logo-img {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+}
 .nav-links {
   display: flex;
   gap: 32px;
@@ -183,8 +192,17 @@ footer {
   font-weight: 900;
   font-size: 1.05rem;
   color: var(--summit-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .footer-logo span { color: var(--alpenglühen); }
+.footer-logo-img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
+  border-radius: 5px;
+}
 .footer-links {
   display: flex;
   gap: 28px;
