@@ -1,0 +1,41 @@
+/* ══════════════════════════════════════════════════ */
+/* KONTAKT — specific styles                         */
+/* ══════════════════════════════════════════════════ */
+.page-intro {
+  color: var(--rock-grey);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+.contact-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 24px;
+}
+.contact-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--alpine-night);
+  margin-bottom: 8px;
+}
+.contact-card p {
+  color: var(--rock-grey);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+.contact-card a {
+  color: var(--glacier-teal);
+  font-weight: 600;
+}
+.contact-icon {
+  font-size: 1.75rem;
+  margin-bottom: 14px;
+}
+
+/* Override placeholder-note margin for kontakt */
+.placeholder-note {
+  margin-bottom: 32px;
+}

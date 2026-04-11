@@ -1,0 +1,248 @@
+/* ─── Design Tokens ───────────────────────────────── */
+:root {
+  --alpine-night:  #1B2B4B;
+  --summit-white:  #F5F5F0;
+  --alpenglühen:   #E8431A;
+  --glacier-teal:  #3A8A8C;
+  --rock-grey:     #6B7280;
+  --white:         #FFFFFF;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', -apple-system, Helvetica, Arial, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  --shadow-card: 0 4px 24px rgba(27, 43, 75, 0.10);
+  --shadow-lg:   0 12px 48px rgba(27, 43, 75, 0.18);
+}
+
+/* ─── Reset ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--summit-white);
+  color: var(--alpine-night);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── Typography helpers ──────────────────────────── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glacier-teal);
+  margin-bottom: 12px;
+}
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+}
+h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 900; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p  { color: var(--rock-grey); font-size: 1.0625rem; line-height: 1.7; }
+
+/* ─── Layout ──────────────────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+section { padding: 96px 0; }
+
+/* ─── Buttons ─────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+  text-decoration: none;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: var(--alpenglühen);
+  color: var(--white);
+  box-shadow: 0 4px 18px rgba(232, 67, 26, 0.35);
+}
+.btn-primary:hover { box-shadow: 0 6px 28px rgba(232, 67, 26, 0.45); }
+.btn-secondary {
+  background: transparent;
+  color: var(--summit-white);
+  border: 2px solid rgba(245, 245, 240, 0.45);
+}
+.btn-secondary:hover { border-color: var(--summit-white); }
+.btn-teal {
+  background: var(--glacier-teal);
+  color: var(--white);
+  box-shadow: 0 4px 18px rgba(58, 138, 140, 0.30);
+}
+.btn-teal:hover { box-shadow: 0 6px 28px rgba(58, 138, 140, 0.40); }
+.btn-outline-dark {
+  background: transparent;
+  color: var(--alpine-night);
+  border: 2px solid var(--alpine-night);
+}
+.btn-outline-dark:hover { background: var(--alpine-night); color: var(--white); }
+
+/* ══════════════════════════════════════════════════ */
+/* NAV                                               */
+/* ══════════════════════════════════════════════════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(27, 43, 75, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--summit-white);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--alpenglühen); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(245, 245, 240, 0.72);
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--summit-white); }
+.nav-cta {
+  flex-shrink: 0;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
+.nav-back {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(245, 245, 240, 0.72);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-back:hover { color: var(--summit-white); text-decoration: none; }
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+}
+
+/* ══════════════════════════════════════════════════ */
+/* FOOTER                                            */
+/* ══════════════════════════════════════════════════ */
+footer {
+  background: var(--alpine-night);
+  color: rgba(245,245,240,0.55);
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: var(--summit-white);
+}
+.footer-logo span { color: var(--alpenglühen); }
+.footer-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.footer-links a {
+  font-size: 0.8rem;
+  color: rgba(245,245,240,0.50);
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--summit-white); }
+.footer-copy {
+  font-size: 0.78rem;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════════════ */
+/* SUBPAGE LAYOUT (impressum / kontakt)              */
+/* ══════════════════════════════════════════════════ */
+.page-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 112px 24px 80px;
+}
+.page-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glacier-teal);
+  margin-bottom: 12px;
+}
+.page-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 40px;
+}
+.page-content a {
+  color: var(--glacier-teal);
+}
+.page-content a:hover { text-decoration: underline; }
+.page-content h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 36px 0 10px;
+  color: var(--alpine-night);
+}
+.page-content p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.placeholder-note {
+  background: rgba(232, 67, 26, 0.06);
+  border-left: 3px solid var(--alpenglühen);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 12px 16px;
+  margin: 24px 0;
+  font-size: 0.875rem;
+  color: var(--alpenglühen);
+  font-weight: 500;
+}
