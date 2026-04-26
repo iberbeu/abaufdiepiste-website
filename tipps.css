@@ -1,0 +1,226 @@
+/* ══════════════════════════════════════════════════ */
+/* TIPPS PAGE                                        */
+/* ══════════════════════════════════════════════════ */
+
+/* ─── Hero ───────────────────────────────────────── */
+.tipps-hero {
+  background: var(--alpine-night);
+  padding: 112px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tipps-hero .page-eyebrow {
+  color: var(--glacier-teal);
+  margin-bottom: 16px;
+}
+
+.tipps-hero h1 {
+  color: var(--summit-white);
+  margin-bottom: 20px;
+}
+
+.tipps-hero-sub {
+  color: rgba(245, 245, 240, 0.65);
+  font-size: 1.125rem;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.tipps-hero-mountains {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
+}
+
+.tipps-hero-mountains svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Main content ───────────────────────────────── */
+.tipps-main {
+  padding: 80px 0 96px;
+}
+
+/* ─── Tip cards ──────────────────────────────────── */
+.tipp-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 96px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.tipp-card:last-child {
+  margin-bottom: 0;
+}
+
+.tipp-card--reverse .tipp-visual { order: 2; }
+.tipp-card--reverse .tipp-content { order: 1; }
+
+/* ─── Visual panel ───────────────────────────────── */
+.tipp-visual {
+  background: linear-gradient(135deg, #1B2B4B 0%, #2A4060 100%);
+  padding: 48px 40px;
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipp-card--reverse .tipp-visual {
+  background: linear-gradient(135deg, #2A4060 0%, #1B2B4B 100%);
+}
+
+.tipp-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.08);
+  line-height: 1;
+  user-select: none;
+}
+
+.tipp-illustration {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.25));
+}
+
+/* ─── Content panel ──────────────────────────────── */
+.tipp-content {
+  padding: 48px 48px 48px 8px;
+}
+
+.tipp-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--glacier-teal);
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-bottom: 16px;
+}
+
+.tipp-content h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  color: var(--alpine-night);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.tipp-content p {
+  color: var(--rock-grey);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+/* ─── Tip items list ─────────────────────────────── */
+.tipp-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tipp-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.tipp-item-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.tipp-items li span:last-child {
+  font-size: 0.9375rem;
+  color: var(--alpine-night);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ─── CTA bar ────────────────────────────────────── */
+.tipps-cta-bar {
+  background: var(--alpine-night);
+  padding: 48px 0;
+}
+
+.tipps-cta-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.tipps-cta-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--summit-white);
+}
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 800px) {
+  .tipp-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .tipp-card--reverse .tipp-visual { order: unset; }
+  .tipp-card--reverse .tipp-content { order: unset; }
+
+  .tipp-visual {
+    min-height: 260px;
+    padding: 36px 28px;
+  }
+
+  .tipp-content {
+    padding: 36px 28px;
+  }
+
+  .tipps-cta-bar .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tipps-hero {
+    padding: 96px 0 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tipp-illustration {
+    max-width: 260px;
+  }
+
+  .tipps-main {
+    padding: 56px 0 72px;
+  }
+
+  .tipp-card {
+    margin-bottom: 48px;
+    border-radius: var(--radius-md);
+  }
+}
