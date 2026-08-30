@@ -42,6 +42,32 @@
     return new TextDecoder().decode(plain);
   }
 
+  // The sections are collapsed <details> elements — a TOC link must open its
+  // target before scrolling, otherwise only the header shows. Scrolling is done
+  // explicitly rather than via the native anchor jump, whose timing relative to
+  // the just-changed layout is unreliable on iOS Safari with smooth scrolling.
+  function openAndScrollTo(id) {
+    const target = document.getElementById(id);
+    if (!target) return false;
+    if (target.tagName === 'DETAILS') target.open = true;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
+  }
+
+  function wireToc() {
+    manualContent.querySelectorAll('.manual-toc a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (ev) => {
+        const id = link.getAttribute('href').slice(1);
+        if (!openAndScrollTo(id)) return;
+        ev.preventDefault();
+        history.pushState(null, '', '#' + id);
+      });
+    });
+    // Deep link straight to a section, e.g. after a reload on #bergab.
+    const hash = location.hash.replace(/^#/, '');
+    if (hash) openAndScrollTo(hash);
+  }
+
   function payloadAvailable() {
     return typeof ANLEITUNG_PAYLOAD !== 'undefined';
   }
@@ -58,6 +84,7 @@
     manualContent.innerHTML = html;
     manualContent.style.display = '';
     gate.style.display = 'none';
+    wireToc();
     try {
       localStorage.setItem(STORAGE_KEY, code);
     } catch (e) { /* private mode — session still works */ }
