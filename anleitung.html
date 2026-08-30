@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Spielanleitung — Ab auf die Piste</title>
+  <link rel="icon" type="image/png" href="img/logo_abaufdiepiste.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="website_shared.css" />
+  <link rel="stylesheet" href="website_anleitung.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ab auf die <span>Piste</span></a>
+      <a href="index.html" class="nav-back">← Zurück zur Startseite</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <noscript>
+      <p class="gate-error">Diese Seite benötigt JavaScript, um die Anleitung zu entschlüsseln. Bitte aktiviere JavaScript in deinem Browser.</p>
+    </noscript>
+
+    <!-- Access gate: shown until the correct code unlocks the manual -->
+    <div id="gate">
+      <p class="page-eyebrow">Nur für Spielbesitzer</p>
+      <h1>Spielanleitung</h1>
+      <p class="gate-intro">
+        Die vollständige Anleitung ist exklusiv für Besitzer des Spiels.
+        Scanne den QR-Code aus deiner Spieltasche — oder gib den Zugangscode
+        von der Karte hier ein.
+      </p>
+      <form id="gateForm" class="gate-card">
+        <label for="gateCode" class="gate-label">Zugangscode</label>
+        <input id="gateCode" class="gate-input" type="text" autocomplete="off"
+               autocapitalize="characters" spellcheck="false" placeholder="z. B. ABCD-1234" />
+        <button type="submit" class="btn btn-primary gate-btn">Anleitung öffnen</button>
+        <p id="gateError" class="gate-error" style="display:none">
+          Dieser Code ist leider nicht gültig. Bitte prüfe die Karte in deiner Spieltasche.
+        </p>
+      </form>
+      <p class="gate-help">
+        Kein Code? Das Spiel gibt es hier: <a href="index.html#buy">Ab auf die Piste kaufen</a>.<br>
+        Probleme mit deinem Code? <a href="kontakt.html">Kontaktiere uns</a>.
+      </p>
+    </div>
+
+    <!-- Decrypted manual is injected here -->
+    <div id="manualContent" style="display:none"></div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Ab auf die <span>Piste</span></div>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Ab auf die Piste<br>Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script src="anleitung_payload.js"></script>
+  <script src="anleitung.js"></script>
+</body>
+</html>

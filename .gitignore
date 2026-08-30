@@ -1,1 +1,5 @@
 CLAUDE.md
+
+# Plaintext manual source — must NEVER be committed (repo is public).
+# Only the encrypted output (anleitung_payload.js) may go into git.
+anleitung_source/
