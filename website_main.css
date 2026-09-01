@@ -333,6 +333,24 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+/* App is not in any store yet — status instead of dead store buttons. */
+.coming-soon {
+  background: var(--glacier-teal);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 20px;
+  align-self: center;
+}
+.coming-soon-note {
+  font-size: 0.875rem;
+  color: var(--rock-grey);
+  line-height: 1.6;
+  flex: 1 1 260px;
+}
 /* Phone mockup */
 .phone-mockup {
   width: 240px;
@@ -393,6 +411,13 @@
 .phone-die.active {
   background: rgba(58, 138, 140, 0.25);
   border-color: var(--glacier-teal);
+}
+/* Same transport symbols as the app; the website keeps its own copies in img/,
+   recoloured white because this mockup screen is dark. */
+.phone-die img {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
 }
 .phone-btn-row {
   display: flex;
@@ -499,6 +524,27 @@
   .testimonials-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 }
 
+/* Empty state while no real testimonials exist yet — see WEB-3. */
+.testimonial-invite {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 40px 32px;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonial-invite-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+.testimonial-invite-text {
+  font-size: 0.9375rem;
+  color: var(--rock-grey);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
 /* ══════════════════════════════════════════════════ */
 /* BUY SECTION                                       */
 /* ══════════════════════════════════════════════════ */
@@ -545,6 +591,7 @@
 }
 .buy-card.physical .buy-price { color: var(--summit-white); }
 .buy-card.app .buy-price      { color: var(--alpine-night); }
+.buy-price.soon { font-size: 1.35rem; }
 .buy-price small {
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -679,27 +726,4 @@
 }
 @media (max-width: 600px) {
   .team-grid { grid-template-columns: 1fr; max-width: 380px; }
-}
-
-/* ══════════════════════════════════════════════════ */
-/* MOCKUP BANNER                                     */
-/* ══════════════════════════════════════════════════ */
-.mockup-banner {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--alpenglühen);
-  color: white;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 8px 20px;
-  border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  z-index: 999;
-  white-space: nowrap;
-  pointer-events: none;
 }

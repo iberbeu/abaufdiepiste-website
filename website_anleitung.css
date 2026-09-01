@@ -55,12 +55,41 @@
   line-height: 1.7;
   margin-bottom: 32px;
 }
+/* The TOC is a <details>: collapsed on phones so the manual itself is the
+   first thing on screen, opened by anleitung.js from the 681px breakpoint up
+   (the same breakpoint the shared nav uses). */
 .manual-toc {
   background: var(--white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  padding: 20px 24px;
-  margin-bottom: 48px;
+  padding: 4px 24px 8px;
+  margin-bottom: 32px;
+}
+.manual-toc[open] { padding-bottom: 12px; }
+.manual-toc > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.manual-toc > summary::-webkit-details-marker { display: none; }
+.manual-toc > summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--glacier-teal);
+  border-bottom: 2px solid var(--glacier-teal);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.manual-toc[open] > summary::after { transform: translateY(2px) rotate(225deg); }
+.manual-toc[open] > summary {
+  border-bottom: 2px solid rgba(27, 43, 75, 0.10);
 }
 .manual-toc-title {
   font-size: 11px;
@@ -68,13 +97,14 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--glacier-teal);
-  margin-bottom: 10px;
+  margin: 0;
 }
 .manual-toc ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0 12px;
+  margin-top: 4px;
 }
 .manual-toc a {
   display: inline-block;
@@ -84,6 +114,21 @@
   padding: 10px 4px;
 }
 .manual-toc a:hover { color: var(--glacier-teal); }
+
+/* Phones: one link per row, so the collapsed list reads as a menu rather than
+   as reflowed text, and every entry keeps a comfortable tap target. */
+@media (max-width: 680px) {
+  .manual-toc { margin-bottom: 20px; }
+  .manual-toc ul {
+    display: block;
+    margin-top: 0;
+  }
+  .manual-toc li + li { border-top: 1px solid rgba(27, 43, 75, 0.07); }
+  .manual-toc a {
+    display: block;
+    padding: 12px 0;
+  }
+}
 
 /* ─── Manual sections (collapsible) ───────────────── */
 .manual-section {

@@ -54,18 +54,30 @@
     return true;
   }
 
+  // The TOC is a <details>. On phones it stays collapsed so the manual starts
+  // right below the intro; from the shared 681px breakpoint up there is room to
+  // show it expanded. Matches the media query in website_anleitung.css.
+  const wideViewport = window.matchMedia('(min-width: 681px)');
+
   function wireToc() {
+    const toc = manualContent.querySelector('.manual-toc');
+    if (toc) toc.open = wideViewport.matches;
+
     manualContent.querySelectorAll('.manual-toc a[href^="#"]').forEach((link) => {
       link.addEventListener('click', (ev) => {
         const id = link.getAttribute('href').slice(1);
-        if (!openAndScrollTo(id)) return;
+        if (!document.getElementById(id)) return;
         ev.preventDefault();
+        // Collapse first on phones: the list would otherwise stay open above the
+        // target and the scroll offset would be computed against a stale layout.
+        if (toc && !wideViewport.matches) toc.open = false;
+        openAndScrollTo(id);
         history.pushState(null, '', '#' + id);
       });
     });
     // Deep link straight to a section, e.g. after a reload on #bergab.
     const hash = location.hash.replace(/^#/, '');
-    if (hash) openAndScrollTo(hash);
+    if (hash && openAndScrollTo(hash) && toc && !wideViewport.matches) toc.open = false;
   }
 
   function payloadAvailable() {

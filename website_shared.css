@@ -103,7 +103,10 @@ section { padding: 96px 0; }
 /* ══════════════════════════════════════════════════ */
 /* NAV                                               */
 /* ══════════════════════════════════════════════════ */
-nav {
+/* Scoped to the page-level site nav: an unscoped `nav` selector also caught
+   in-page navigation such as the manual's table of contents and pinned it
+   over the content as a fixed overlay. */
+body > nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
