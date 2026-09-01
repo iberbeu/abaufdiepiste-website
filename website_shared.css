@@ -1,3 +1,56 @@
+/* ══════════════════════════════════════════════════ */
+/* SELF-HOSTED FONTS                                 */
+/* ══════════════════════════════════════════════════ */
+/* Served from our own domain on purpose: loading them from
+   fonts.googleapis.com transmits every visitor IP to Google
+   (LG München I, 20.01.2022 – 3 O 17493/20). Never re-add the
+   Google Fonts <link> tags.
+   Source: @fontsource, SIL Open Font License 1.1 —
+   licence texts in fonts/LICENSE_*.txt.
+   Subset: latin (covers ä ö ü ß and the dashes used on the site). */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/playfair-display-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('fonts/playfair-display-latin-900-normal.woff2') format('woff2');
+}
+
 /* ─── Design Tokens ───────────────────────────────── */
 :root {
   --alpine-night:  #1B2B4B;
@@ -256,6 +309,31 @@ footer {
   font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 12px;
+}
+.page-content ul {
+  margin: 0 0 12px 22px;
+  padding: 0;
+  list-style: disc;
+}
+.page-content li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--rock-grey);
+  margin-bottom: 6px;
+}
+.page-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(27,43,75,0.06);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+}
+.page-updated {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(27,43,75,0.12);
+  font-size: 0.875rem;
+  color: var(--rock-grey);
 }
 .placeholder-note {
   background: rgba(232, 67, 26, 0.06);
