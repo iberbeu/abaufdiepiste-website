@@ -225,6 +225,7 @@
 /* ─── Points tables ───────────────────────────────── */
 .points-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   margin-top: 0;
   margin-bottom: 16px;
@@ -242,12 +243,15 @@
   color: var(--glacier-teal);
   padding: 10px 14px;
   border-bottom: 2px solid rgba(27, 43, 75, 0.10);
+  overflow-wrap: break-word;
 }
 .points-table td {
   padding: 10px 14px;
   color: var(--rock-grey);
   border-bottom: 1px solid rgba(27, 43, 75, 0.06);
   vertical-align: top;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .points-table tr:last-child td { border-bottom: none; }
 .points-table td:first-child { color: var(--alpine-night); font-weight: 500; }
