@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Spielerbereich — Ab auf die Piste</title>
+  <meta name="description" content="Der Spielerbereich zu Ab auf die Piste — Spielanleitung, Pistenplan und mehr, zugänglich mit dem Code aus deiner Spieltasche." />
+  <link rel="canonical" href="https://abaufdiepiste.ch/spielerbereich.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ab auf die Piste" />
+  <meta property="og:locale" content="de_CH" />
+  <meta property="og:title" content="Spielerbereich — Ab auf die Piste" />
+  <meta property="og:description" content="Der Spielerbereich zu Ab auf die Piste — Spielanleitung, Pistenplan und mehr, zugänglich mit dem Code aus deiner Spieltasche." />
+  <meta property="og:url" content="https://abaufdiepiste.ch/spielerbereich.html" />
+  <meta property="og:image" content="https://abaufdiepiste.ch/img/og_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Ab auf die Piste — das Brettspiel für den perfekten Skitag" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="img/logo_abaufdiepiste.png" />
+  <link rel="stylesheet" href="website_shared.css" />
+  <link rel="stylesheet" href="website_spielerbereich.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ab auf die <span>Piste</span></a>
+      <a href="index.html" class="nav-back">← Zurück zur Startseite</a>
+    </div>
+  </nav>
+
+  <main class="page-content">
+
+    <noscript>
+      <p class="gate-error">Diese Seite benötigt JavaScript, um die Inhalte zu entschlüsseln. Bitte aktiviere JavaScript in deinem Browser.</p>
+    </noscript>
+
+    <p id="loading" class="loading-note" role="status" style="display:none">Wird entschlüsselt …</p>
+
+    <!-- Access gate: shown until the correct code unlocks the area -->
+    <div id="gate" style="display:none">
+      <p class="page-eyebrow">Nur für Spielbesitzer</p>
+      <h1>Spielerbereich</h1>
+      <p class="gate-intro">
+        Der Spielerbereich ist exklusiv für Besitzer des Spiels.
+        Scanne den QR-Code aus deiner Spieltasche — oder gib den Zugangscode
+        von der Karte hier ein.
+      </p>
+      <form id="gateForm" class="gate-card">
+        <label for="gateCode" class="gate-label">Zugangscode</label>
+        <input id="gateCode" class="gate-input" type="text" autocomplete="off"
+               autocapitalize="characters" autocorrect="off" spellcheck="false"
+               aria-describedby="gateError" aria-invalid="false" placeholder="z. B. ABCD-1234" />
+        <button type="submit" class="btn btn-primary gate-btn">Spielerbereich öffnen</button>
+        <p id="gateError" class="gate-error" role="alert" style="display:none"></p>
+      </form>
+      <p class="gate-help">
+        Kein Code? Das Spiel gibt es hier: <a href="index.html#buy">Ab auf die Piste kaufen</a>.<br>
+        Probleme mit deinem Code? <a href="kontakt.html">Kontaktiere uns</a>.
+      </p>
+    </div>
+
+    <p id="storageNote" class="gate-error" role="alert" style="display:none">
+      Dein Browser speichert den Zugangscode nicht, deshalb lassen sich die Inhalte hier nicht öffnen.
+      Bitte erlaube Website-Daten für diese Seite oder öffne sie in deinem normalen Browser
+      (z. B. Safari oder Chrome) statt im Scanner.
+    </p>
+
+    <!-- Decrypted hub cards are injected here -->
+    <div id="hubContent" style="display:none"></div>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Ab auf die <span>Piste</span></div>
+      <ul class="footer-links">
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Ab auf die Piste<br>Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script src="spielerbereich.js"></script>
+  <script src="spielerbereich_hub.js"></script>
+</body>
+</html>

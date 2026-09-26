@@ -1,62 +1,9 @@
-/* ═══ Anleitung page: access gate + manual layout ═══ */
+/* ═══ Anleitung page: manual layout ═══ */
+/* Gate, intro and page shell styles live in website_spielerbereich.css. */
 
-/* ─── Access gate ─────────────────────────────────── */
-.gate-intro {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-.gate-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 420px;
-}
-.gate-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--glacier-teal);
-}
-.gate-input {
-  font-family: var(--font-body);
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 12px 14px;
-  border: 2px solid rgba(27, 43, 75, 0.15);
-  border-radius: var(--radius-sm);
-  color: var(--alpine-night);
-  outline: none;
-  transition: border-color 0.15s;
-}
-.gate-input:focus { border-color: var(--glacier-teal); }
-.gate-btn { justify-content: center; }
-.gate-error {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--alpenglühen);
-  margin: 0;
-}
-.gate-help {
-  margin-top: 28px;
-  font-size: 0.9rem;
-}
-
-/* ─── Manual: intro & table of contents ───────────── */
-.page-intro {
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
+/* ─── Manual: table of contents ───────────────────── */
 /* The TOC is a <details>: collapsed on phones so the manual itself is the
-   first thing on screen, opened by anleitung.js from the 681px breakpoint up
+   first thing on screen, opened by spielerbereich_anleitung.js from the 681px breakpoint up
    (the same breakpoint the shared nav uses). */
 .manual-toc {
   background: var(--white);

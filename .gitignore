@@ -1,5 +1,8 @@
 CLAUDE.md
 
-# Plaintext manual source — must NEVER be committed (repo is public).
-# Only the encrypted output (anleitung_payload.js) may go into git.
+# Plaintext source of the Spielerbereich (manual, hub cards, build script) — must
+# NEVER be committed (repo is public). Only the encrypted output in
+# spielerbereich_enc/ may go into git.
+spielerbereich_source/
+# Former name of the same folder — keep ignored in case an old backup is restored.
 anleitung_source/

@@ -111,10 +111,13 @@
 
     <h2>6. Lokale Speicherung auf deinem Gerät</h2>
     <p>
-      Auf der geschützten Seite „Spielanleitung“ speichert dein Browser nach dem
-      erfolgreichen Entsperren den eingegebenen Zugangscode im lokalen Speicher
-      (localStorage, Schlüssel <code>anleitungCode</code>). Das dient allein deinem Komfort:
-      Du musst den Code beim nächsten Besuch nicht erneut eingeben.
+      Im geschützten „Spielerbereich“ (Spielanleitung, Pistenplan und weitere Inhalte)
+      speichert dein Browser nach dem erfolgreichen Entsperren den eingegebenen Zugangscode
+      im lokalen Speicher (localStorage, Schlüssel <code>spielerbereichCode</code>; blockiert
+      dein Browser das, ersatzweise im Sitzungsspeicher). Ein älterer Eintrag unter dem
+      Schlüssel <code>anleitungCode</code> wird dabei übernommen und gelöscht. Das dient allein
+      deinem Komfort: Du musst den Code beim nächsten Besuch und beim Wechsel zwischen den
+      Unterseiten nicht erneut eingeben.
     </p>
     <p>
       Diese Information bleibt auf deinem Gerät und wird zu keinem Zeitpunkt an uns oder
@@ -174,7 +177,7 @@
       Newsletter dazukommt. Es gilt jeweils die hier veröffentlichte Fassung.
     </p>
 
-    <p class="page-updated">Stand: 1. September 2026</p>
+    <p class="page-updated">Stand: 26. September 2026</p>
   </main>
 
   <footer>

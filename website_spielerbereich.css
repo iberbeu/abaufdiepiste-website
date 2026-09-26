@@ -1,0 +1,148 @@
+/* ═══ Spielerbereich: access gate, hub cards, Pistenplan ═══ */
+/* Loaded by every Spielerbereich page (hub, Anleitung, Pistenplan). The manual's own
+   layout lives in website_anleitung.css.
+   All text rules below are prefixed with .page-content: the shared `.page-content p`
+   rule (specificity 0,1,1) would otherwise override a single-class selector. */
+
+/* ─── Intro text & loading note ───────────────────── */
+.page-content .page-intro {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.page-content .loading-note {
+  font-size: 0.95rem;
+  color: var(--rock-grey);
+}
+
+/* ─── Access gate ─────────────────────────────────── */
+.page-content .gate-intro {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.gate-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+}
+.gate-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glacier-teal);
+}
+.gate-input {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 14px;
+  border: 2px solid rgba(27, 43, 75, 0.15);
+  border-radius: var(--radius-sm);
+  color: var(--alpine-night);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.gate-input:focus { border-color: var(--glacier-teal); }
+.gate-btn { justify-content: center; }
+/* Disabled while the key is derived — can take a few seconds on slow phones. */
+.gate-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.gate-btn:disabled:hover { transform: none; }
+/* Darker than --alpenglühen: that colour is only ~3.7:1 on the page background, too weak
+   for small text. This one is ~5.4:1. */
+.page-content .gate-error {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #B8360F;
+  margin: 0 0 12px;
+}
+.page-content .gate-help {
+  margin-top: 28px;
+  font-size: 0.9rem;
+}
+
+/* ─── Hub cards ───────────────────────────────────── */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.page-content a.area-card {
+  display: block;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  color: var(--alpine-night);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.page-content a.area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+.area-icon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+.page-content .area-card h2 {
+  font-size: 1.15rem;
+  margin: 0 0 6px;
+}
+.page-content .area-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--rock-grey);
+  margin: 0;
+}
+
+/* ─── Pistenplan page ─────────────────────────────── */
+/* Keeps "Flocke-Arena" in one piece when the phone-width title wraps. */
+.nowrap { white-space: nowrap; }
+/* The map is far too detailed for the 720px reading column. */
+.page-content.page-wide { max-width: 1100px; }
+.page-wide .page-intro { max-width: 720px; }
+.page-content a.map-frame {
+  display: block;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 8px;
+  margin-bottom: 20px;
+  cursor: zoom-in;
+}
+.map-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+.map-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+/* `.page-content a` (shared) would recolour the anchor buttons. */
+.page-content a.btn,
+.page-content a.btn:hover { text-decoration: none; }
+.page-content a.btn-primary,
+.page-content a.btn-teal { color: var(--white); }
+.page-content .map-hint {
+  font-size: 0.9rem;
+  color: var(--rock-grey);
+}
