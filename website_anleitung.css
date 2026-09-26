@@ -168,9 +168,11 @@
 .level-card h3 { margin: 0 0 8px; }
 .level-card p { margin-bottom: 8px; }
 .level-card p:last-child { margin-bottom: 0; }
-.level-anfaenger      { border-left-color: #C62828; }
-.level-fortgeschritten { border-left-color: #1B1B1B; }
-.level-profi          { border-left-color: #F2B705; }
+/* Brand colours, deliberately not the piste colours: the level is told apart by
+   its stars (on the dice and in the text), and red/black/yellow mean piste difficulty. */
+.level-anfaenger      { border-left-color: var(--glacier-teal); }
+.level-fortgeschritten { border-left-color: var(--alpine-night); }
+.level-profi          { border-left-color: var(--alpenglühen); }
 
 /* ─── Points tables ───────────────────────────────── */
 .points-table {
