@@ -132,6 +132,7 @@
 
 /* ─── Manual sections (collapsible) ───────────────── */
 .manual-section {
+  --section-inset: 20px;
   padding: 0;
   margin-bottom: 12px;
   scroll-margin-top: 88px;
@@ -146,7 +147,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 20px;
+  padding: 16px var(--section-inset);
   -webkit-tap-highlight-color: transparent;
 }
 .manual-section summary::-webkit-details-marker { display: none; }
@@ -171,10 +172,12 @@
 }
 /* Side inset for the card content. Children below must use margin-top/-bottom
    longhands — a `margin` shorthand here has equal specificity and would reset
-   the inset to zero. */
+   the inset to zero. Children sized `width: 100%` must subtract the inset
+   (see .points-table): the margins sit outside that width and would otherwise
+   push the element past the card edge. */
 .manual-section > *:not(summary) {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: var(--section-inset);
+  margin-right: var(--section-inset);
 }
 .manual-section[open] { padding-bottom: 8px; }
 .manual-section h3 {
@@ -224,7 +227,9 @@
 
 /* ─── Points tables ───────────────────────────────── */
 .points-table {
-  width: 100%;
+  /* Plain `width: 100%` resolves against the full card width, and the inset
+     margins are then added outside it — overflowing the card by 2 × inset. */
+  width: calc(100% - 2 * var(--section-inset));
   table-layout: fixed;
   border-collapse: collapse;
   margin-top: 0;
