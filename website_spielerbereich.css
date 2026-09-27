@@ -110,13 +110,13 @@
   margin: 0;
 }
 
-/* ─── Pistenplan page ─────────────────────────────── */
+/* ─── Material pages (Pistenplan, Punkteblock) ────── */
 /* Keeps "Flocke-Arena" in one piece when the phone-width title wraps. */
 .nowrap { white-space: nowrap; }
 /* The map is far too detailed for the 720px reading column. */
 .page-content.page-wide { max-width: 1100px; }
 .page-wide .page-intro { max-width: 720px; }
-.page-content a.map-frame {
+.page-content a.material-frame {
   display: block;
   background: var(--white);
   border-radius: var(--radius-md);
@@ -125,13 +125,14 @@
   margin-bottom: 20px;
   cursor: zoom-in;
 }
-.map-frame img {
+.material-frame img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
 }
-.map-actions {
+.page-content a.material-frame--portrait { max-width: 560px; }
+.material-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -142,7 +143,7 @@
 .page-content a.btn:hover { text-decoration: none; }
 .page-content a.btn-primary,
 .page-content a.btn-teal { color: var(--white); }
-.page-content .map-hint {
+.page-content .material-hint {
   font-size: 0.9rem;
   color: var(--rock-grey);
 }

@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
-  <title>Pistenplan Flocke-Arena — Ab auf die Piste</title>
-  <meta name="description" content="Der offizielle Standard-Pistenplan Flocke-Arena zu Ab auf die Piste — Teil des Spielerbereichs, zugänglich mit dem Code aus deiner Spieltasche." />
-  <link rel="canonical" href="https://abaufdiepiste.ch/spielerbereich_pistenplan.html" />
+  <title>Punkteblock — Ab auf die Piste</title>
+  <meta name="description" content="Der Punkteblock mit Kurzregeln zu Ab auf die Piste — Teil des Spielerbereichs, zugänglich mit dem Code aus deiner Spieltasche." />
+  <link rel="canonical" href="https://abaufdiepiste.ch/spielerbereich_punkteblock.html" />
   <link rel="icon" type="image/png" href="img/logo_abaufdiepiste.png" />
   <link rel="stylesheet" href="website_shared.css" />
   <link rel="stylesheet" href="website_spielerbereich.css" />
@@ -23,34 +23,33 @@
   <main class="page-content page-wide">
 
     <noscript>
-      <p class="gate-error">Diese Seite benötigt JavaScript, um den Pistenplan zu entschlüsseln. Bitte aktiviere JavaScript in deinem Browser.</p>
+      <p class="gate-error">Diese Seite benötigt JavaScript, um den Punkteblock zu entschlüsseln. Bitte aktiviere JavaScript in deinem Browser.</p>
     </noscript>
 
     <p class="page-eyebrow">Nur für Spielbesitzer</p>
-    <h1>Pistenplan <span class="nowrap">Flocke-Arena</span></h1>
+    <h1>Punkteblock</h1>
     <p class="page-intro">
-      Kein eigener Pistenplan zur Hand? Dieses Skigebiet mit drei Tälern und drei Gipfeln ist
-      genau für «Ab auf die Piste» gebaut.
+      Block leer? Hier kannst du neue Blätter ausdrucken – für bis zu vier Spieler:innen,
+      mit Zeittabelle, Schlusswertung und den wichtigsten Regeln auf einen Blick.
     </p>
 
     <p id="loading" class="loading-note" role="status" style="display:none">Wird entschlüsselt …</p>
     <p id="loadError" class="gate-error" role="alert" style="display:none"></p>
     <a id="hubLink" class="btn btn-teal" href="spielerbereich.html" style="display:none">Zum Spielerbereich</a>
 
-    <!-- Decrypted map is shown here -->
-    <div id="materialView" data-image-file="pistenplan_bild.bin" data-pdf-file="pistenplan_a3.bin" style="display:none">
-      <a id="materialOpen" class="material-frame" target="_blank" rel="noopener"
-         aria-label="Pistenplan in voller Grösse in einem neuen Tab öffnen">
-        <img id="materialImage" width="2400" height="1697"
-             alt="Pistenplan Flocke-Arena: drei Täler, drei Gipfel, nummerierte Pistenabschnitte und Beförderungen" />
+    <!-- Decrypted score pad is shown here -->
+    <div id="materialView" data-image-file="punkteblock_bild.bin" data-pdf-file="punkteblock_pdf.bin" style="display:none">
+      <a id="materialOpen" class="material-frame material-frame--portrait" target="_blank" rel="noopener"
+         aria-label="Punkteblock in voller Grösse in einem neuen Tab öffnen">
+        <img id="materialImage" width="1191" height="1713"
+             alt="Punkteblock: Spieler- und Zeittabelle von 08:00 bis 17:30, Schlusswertung und Kurzregeln" />
       </a>
       <div class="material-actions">
-        <a id="pdfLink" class="btn btn-primary" download="Pistenplan_Flocke-Arena_A3.pdf" style="display:none">PDF herunterladen (A3)</a>
+        <a id="pdfLink" class="btn btn-primary" download="Punkteblock_Ab_auf_die_Piste.pdf" style="display:none">PDF herunterladen</a>
       </div>
       <p id="pdfError" class="gate-error" role="alert" style="display:none"></p>
       <p class="material-hint">
-        Tippe auf den Plan, um ihn in voller Grösse zu öffnen und hineinzuzoomen.
-        Zum Ausdrucken eignet sich das PDF (A3 quer).
+        Das PDF druckt ein Blatt in A6-Grösse auf A4. Beim Drucken «Tatsächliche Grösse / 100 %» wählen.
       </p>
     </div>
 
