@@ -110,96 +110,10 @@
   margin: 0;
 }
 
-/* ─── Quickstart (full-width hub card: video + short rules) ─── */
-/* Not a link like the other cards, so it gets the card look on its own. */
-.page-content .area-card--wide {
+/* Quickstart: the first card spans the full grid width. */
+.page-content a.area-card--wide {
   grid-column: 1 / -1;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  padding: 24px;
-  color: var(--alpine-night);
-}
-.qs-video {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  margin: 20px 0 24px;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  background: radial-gradient(120% 90% at 50% 0%, #23355c 0%, var(--alpine-night) 70%);
-}
-.qs-video video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: var(--alpine-night);
-}
-.qs-play {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  color: var(--white);
-  font-family: var(--font-body);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-}
-.qs-play-icon {
-  display: grid;
-  place-items: center;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: var(--alpenglühen);
-  font-size: 1.6rem;
-  padding-left: 5px;
-  box-shadow: 0 8px 24px rgba(232, 67, 26, 0.45);
-  transition: transform 0.15s ease;
-}
-.qs-play:hover .qs-play-icon { transform: scale(1.06); }
-.qs-play:focus-visible { outline: 3px solid var(--glacier-teal); outline-offset: -3px; }
-.qs-play:disabled { cursor: wait; }
-.qs-play-label { font-size: 1.1rem; font-weight: 700; }
-.qs-play-size { font-size: 0.85rem; opacity: 0.75; }
-.page-content .qs-error {
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 12px;
-  margin: 0;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--white);
-  text-align: center;
-}
-.page-content .qs-text h3 {
-  font-size: 1.05rem;
-  margin: 20px 0 8px;
-}
-.page-content .qs-text ul {
-  margin: 0 0 12px;
-  padding-left: 20px;
-}
-.page-content .qs-text li {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 6px;
-}
-.page-content .qs-text ul ul { margin: 6px 0 0; }
-.page-content .qs-text p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.page-content .qs-more {
-  margin: 20px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(27, 43, 75, 0.1);
-  font-weight: 600;
+  border-left: 5px solid var(--alpenglühen);
 }
 
 /* ─── Material pages (Pistenplan, Punkteblock) ────── */

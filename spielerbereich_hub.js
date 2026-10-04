@@ -15,10 +15,6 @@
   const loading = document.getElementById('loading');
   const storageNote = document.getElementById('storageNote');
   const hubContent = document.getElementById('hubContent');
-  const VIDEO_FILE = 'quickstart_video.bin';
-
-  // Code that opened hub.bin — the Quickstart video (another .bin) is decrypted with it.
-  let unlockedCode = '';
 
   // Shows the gate, with an error message if there is one.
   function showGate(message) {
@@ -34,7 +30,6 @@
     const res = await SB.decryptText('hub.bin', code);
     if (!res.ok) return res;
     hubContent.innerHTML = res.text;
-    unlockedCode = code;
     hubContent.style.display = '';
     gate.style.display = 'none';
     // Without any storage the section pages cannot see the code and would send the
@@ -105,46 +100,6 @@
       showGate(SB.errorMessage(res.reason));
     }
   }
-
-  // ─── Quickstart video ───────────────────────────────
-  // The video is large (~14 MB), so it is only fetched and decrypted when the visitor
-  // asks for it. The decrypted MP4 is handed to the <video> element as a Blob URL.
-  // The card markup comes from hub.bin, so the click is caught via delegation.
-  let videoLoading = false;
-
-  async function playQuickstart(btn) {
-    if (videoLoading) return;
-    const video = document.getElementById('qsVideo');
-    const error = document.getElementById('qsError');
-    if (!video || !error) return;
-    videoLoading = true;
-    btn.disabled = true;
-    const label = btn.querySelector('.qs-play-label');
-    if (label) label.textContent = 'Video wird geladen …';
-    error.style.display = 'none';
-
-    const res = await SB.decryptFile(VIDEO_FILE, unlockedCode);
-    videoLoading = false;
-    if (!res.ok) {
-      btn.disabled = false;
-      if (label) label.textContent = 'Video abspielen';
-      error.textContent = res.reason === 'code' ? SB.errorMessage('stored') : SB.errorMessage(res.reason);
-      error.style.display = '';
-      return;
-    }
-    video.src = URL.createObjectURL(new Blob([res.bytes], { type: 'video/mp4' }));
-    video.style.display = '';
-    btn.style.display = 'none';
-    video.focus();
-    // Autoplay after a user click is allowed; if a browser still refuses, the native
-    // controls are visible and the visitor can press play.
-    video.play().catch(() => {});
-  }
-
-  hubContent.addEventListener('click', (ev) => {
-    const btn = ev.target.closest('#qsPlay');
-    if (btn) playQuickstart(btn);
-  });
 
   init();
 })();

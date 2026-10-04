@@ -1,0 +1,252 @@
+/* ═══ Spielerbereich: Quickstart page (video, step-by-step guide, quick reference) ═══ */
+/* Text rules are prefixed with .page-content: the shared `.page-content p/li` rules
+   (specificity 0,1,1) would otherwise override single-class selectors. */
+
+/* ─── Video ───────────────────────────────────────── */
+.qs-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 40px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 0%, #23355c 0%, var(--alpine-night) 70%);
+  box-shadow: var(--shadow-card);
+}
+.qs-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--alpine-night);
+}
+.qs-play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.qs-play-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  padding-left: 5px;
+  border-radius: 50%;
+  background: var(--alpenglühen);
+  font-size: 1.6rem;
+  box-shadow: 0 8px 24px rgba(232, 67, 26, 0.45);
+  transition: transform 0.15s ease;
+}
+.qs-play:hover .qs-play-icon { transform: scale(1.06); }
+.qs-play:focus-visible { outline: 3px solid var(--glacier-teal); outline-offset: -3px; }
+.qs-play:disabled { cursor: wait; }
+.qs-play-label { font-size: 1.1rem; font-weight: 700; }
+.qs-play-size { font-size: 0.85rem; opacity: 0.75; }
+.page-content .qs-error {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 12px;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+}
+
+/* ─── Step-by-step phases ─────────────────────────── */
+.qs-phase {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 22px 22px 8px;
+  margin-bottom: 16px;
+}
+.page-content .qs-phase h2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 1.25rem;
+  margin: 0 0 14px;
+}
+.qs-time {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--glacier-teal);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+.qs-steps {
+  margin: 0;
+  padding-left: 26px;
+}
+.page-content .qs-steps li {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 14px;
+  padding-left: 4px;
+}
+.qs-steps li::marker {
+  font-weight: 800;
+  color: var(--alpenglühen);
+}
+
+/* Dice pictures inside the text */
+.qs-dice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 6px;
+}
+.qs-dice img {
+  width: 46px;
+  height: 46px;
+  padding: 6px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 3px 0 #c5ccd6, 0 4px 10px rgba(27, 43, 75, 0.15);
+  border: 1px solid rgba(27, 43, 75, 0.08);
+}
+.qs-dice img.qs-die-full { padding: 0; }
+.qs-dice img.qs-die-event { background: #dcecf7; }
+.qs-dice img.is-match { outline: 3px solid var(--alpenglühen); outline-offset: 2px; }
+.qs-dice--example img:not(.is-match) { opacity: 0.45; }
+.qs-dice--small img { width: 36px; height: 36px; padding: 4px; border-radius: 8px; }
+.qs-dice--small img.qs-die-full { padding: 0; }
+.qs-dice-note {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--alpine-night);
+  margin-left: 4px;
+}
+
+/* Piste colour chips (piste colours are only used for pistes) */
+.qs-chip {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  white-space: nowrap;
+}
+.qs-chip--blue { background: #1f6fd0; }
+.qs-chip--red { background: #d8232a; }
+.qs-chip--black { background: #1a1a1a; }
+.qs-chip--yellow { background: #f2b705; color: var(--alpine-night); }
+
+/* ─── Quick reference ("Auf einen Blick") ─────────── */
+.qs-ref {
+  margin-top: 32px;
+  background: var(--alpine-night);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  color: var(--white);
+}
+.page-content .qs-ref h2 {
+  color: var(--white);
+  font-size: 1.4rem;
+  margin: 0 0 16px;
+}
+.qs-ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.qs-ref-box {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.qs-ref-box--wide { grid-column: 1 / -1; }
+.page-content .qs-ref-box h3 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8fd3d4;
+  margin: 0 0 10px;
+}
+.qs-ref-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.page-content .qs-ref-box li,
+.page-content .qs-ref-box p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #dfe6f2;
+  margin: 0 0 4px;
+}
+.qs-ref-box ul.qs-plain { list-style: none; padding-left: 0; }
+.page-content .qs-ref-box .qs-small {
+  font-size: 0.85rem;
+  color: #a9b6cf;
+  margin-top: 8px;
+}
+.qs-ref-box .qs-dice img { box-shadow: none; }
+.qs-star { color: #FFC978; letter-spacing: 1px; }
+.qs-ref-box .qs-chip { min-width: 70px; text-align: center; margin-right: 6px; }
+
+.qs-events {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.qs-ref-box ul.qs-events { padding-left: 0; }
+.page-content .qs-events li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.qs-events img {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  border-radius: 9px;
+  background: #dcecf7;
+}
+.qs-events strong { display: block; color: var(--white); }
+
+.qs-coin {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  vertical-align: -5px;
+}
+.qs-coin--joker { background: #F59C3C; color: var(--alpine-night); }
+.qs-coin--gratis { background: var(--glacier-teal); color: var(--white); }
+
+/* ─── Link to the full manual ─────────────────────── */
+.page-content .qs-more {
+  margin: 28px 0 0;
+  font-weight: 600;
+}
+
+/* Phones: six dice must fit in one row. */
+@media (max-width: 480px) {
+  .qs-dice { gap: 6px; }
+  .qs-dice img { width: 38px; height: 38px; padding: 5px; }
+  .qs-phase { padding: 18px 16px 6px; }
+}
